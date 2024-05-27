@@ -1,0 +1,175 @@
+
+.select2-selection__rendered {
+    line-height: 35px !important;
+}
+.select2-container .select2-selection--single {
+    height: 36px !important;
+}
+.select2-selection__arrow {
+    height: 34px !important;
+}
+
+/* login */
+.container-login {
+    padding: 90px;
+    font-family: 'Poppins', sans-serif;
+}
+.main{
+    border-radius: 12px;
+}
+.form-label {
+    font-size: 16px;
+    font-weight: 400;
+}
+.form input {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+/* end login */
+.popup-container {
+    position: absolute;
+    display: inline-block;
+    background: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: -13px;
+}
+
+#table,
+#lines {
+    padding: 3px;
+    margin: 5px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.popup-container .popup-body {
+    visibility: hidden;
+    position: absolute;
+    width: auto;
+    background-color: aqua;
+    color: #000;
+    text-align: left;
+    padding: 15px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    -webkit-box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.popup-container .show-popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-bottom {
+    top: -200px;
+    left: -600px;
+    margin-left: 60px;
+}
+
+.popup-bottom::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 100%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 0 10px 8px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+
+.popup-link {
+    margin: -13px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.popup-link:hover {
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.inline-flex,
+.block,
+.link-primary {
+    text-decoration: none;
+}
+
+.badge {
+    display: inline-flex !important;
+}
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+    #hapusdata,
+    #term,
+    #search {
+        position: relative;
+        margin: 2px;
+    }
+
+    #hapusdata {
+        align-self: center;
+        height: min-content;
+    }
+    #term {
+        width: 120px;
+        margin-right: 0;
+    }
+
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 1.3em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    table td::before {
+        /*
+* aria-label has no advantage, it won't be read inside a table
+content: attr(aria-label);
+*/
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
