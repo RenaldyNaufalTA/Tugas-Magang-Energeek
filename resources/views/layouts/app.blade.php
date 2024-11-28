@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
-    <link href="/css/penerimaanpegawai.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/css/penerimaanpegawai.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <!--Bootstrap Css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +22,7 @@
     @livewireStyles
     <!--end::Global Stylesheets Bundle-->
 
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -90,7 +90,7 @@
     </div>
 
     @livewireScripts
-    <script src="../../select2/selectlowongan.js"></script>
+    <script src="{{ asset('/select2/selectlowongan.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     {{-- sweet alert --}}

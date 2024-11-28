@@ -42,7 +42,7 @@ class LowonganController extends Controller
     {
         $user_id = Auth::id();
         $this->validate($request, [
-            'jabatan' => 'required',
+            'jabatan_id' => 'required',
             'judul' => 'required|max:255',
             'slug' => 'required|unique:lowongan|max:255',
             'deskripsi' => 'max:500',
@@ -56,7 +56,7 @@ class LowonganController extends Controller
         $lowongan->slug = $request->slug;
         $lowongan->deskripsi = $request->deskripsi;
         $lowongan->end_date = $request->end_date;
-        $lowongan->jabatan_id = $request->jabatan;
+        $lowongan->jabatan_id = $request->jabatan_id;
         $lowongan->created_by = $user_id;
         $lowongan->save();
 
@@ -98,23 +98,22 @@ class LowonganController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'jabatan' => 'required',
+            'jabatan_id' => 'required',
             'judul' => 'required|max:50',
             'slug' => 'required|max:50',
             'deskripsi' => 'max:500',
             'end_date' => 'required',
         ]);
-        $user_id = Auth::id();
+        $user_id = Auth::user()->id;
         $lowongan = Lowongan::findOrFail($id);
 
-        $lowongan->update([
-            'judul' => $request->judul,
-            'slug' => $request->slug,
-            'deskripsi' => $request->deskripsi,
-            'end_date' => $request->end_date,
-            'jabatan' => $request->jabatan,
-            'updated_by' => $user_id,
-        ]);
+        $lowongan->judul = $request->judul;
+        $lowongan->slug = $request->slug;
+        $lowongan->deskripsi = $request->deskripsi;
+        $lowongan->end_date = $request->end_date;
+        $lowongan->jabatan_id = $request->jabatan_id;
+        $lowongan->updated_by = $user_id;
+        $lowongan->save();
         return redirect('/lowongan')->with('success', ' Lowongan berhasil diperbarui!');
     }
 

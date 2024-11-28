@@ -9,7 +9,7 @@
         <ul class="navbar-nav ms-auto">
             @auth
                 <li class="nav-item">
-                    <select class="js-select" data-placeholder="Lowongan" style="width: 290px" name="state" id="select">
+                    <select class="js-select" data-placeholder="Job" style="width: 290px" name="state" id="select">
                         <option></option>
                         @if ($lowongan->count())
                             <optgroup label="Lowongan yang Tersedia">

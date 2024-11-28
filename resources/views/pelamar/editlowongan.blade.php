@@ -14,10 +14,12 @@
             @csrf
             <div class="fv-row mb-4 mt-1">
                 <label class="form-label fs-6 fw-bolder text-dark">Jabatan</label>
-                <select class="form-select form-select jabatan @error('jabatan') is-invalid @enderror" style="width:100%"
-                    data-placeholder="Select Jabatan" name="jabatan" id="jabatan" required>
+                <select class="form-select form-select jabatan @error('jabatan') is-invalid @enderror"
+                    style="width:100%" data-placeholder="Select Jabatan" name="jabatan_id" id="jabatan_id" required>
                     @foreach ($jabatan as $jbtn)
-                        <option value="{{ $jbtn->nama }}">{{ $jbtn->nama }}</option>
+                        <option value="{{ $jbtn->id }}"
+                            {{ old('jabatan_id', $lowongan->jabatan_id) == $jbtn->id ? 'selected' : '' }}>
+                            {{ $jbtn->nama }}</option>
                     @endforeach
 
                 </select>
@@ -80,10 +82,8 @@
                 <label class="form-label fs-6 fw-bolder text-dark">Deskripsi</label>
                 <!--end::Label-->
                 <!--begin::Input-->
-                <textarea
-                    class="form-control form-control-lg form-control-solid @error('deskripsi') is-invalid @enderror"
-                    name="deskripsi" id="deskripsi" rows="7" value="{{ $lowongan->deskripsi }}"
-                    placeholder="Optional">{{ $lowongan->deskripsi }}</textarea>
+                <textarea class="form-control form-control-lg form-control-solid @error('deskripsi') is-invalid @enderror"
+                    name="deskripsi" id="deskripsi" rows="7" value="{{ $lowongan->deskripsi }}" placeholder="Optional">{{ $lowongan->deskripsi }}</textarea>
                 <!--end::Input-->
                 @error('deskripsi')
                     <div class="alert alert-danger mt-2 py-2">

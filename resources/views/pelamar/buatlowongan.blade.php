@@ -14,13 +14,12 @@
             @csrf
             <div class="fv-row mb-4 mt-1">
                 <label class="form-label fs-6 fw-bolder text-dark">Jabatan</label>
-                <select class="jabatan form-select" style="width:100%" data-placeholder="Select Jabatan" name="jabatan"
-                    id="jabatan" required>
+                <select class="jabatan form-select" style="width:100%" data-placeholder="Select Jabatan"
+                    name="jabatan_id" id="jabatan_id" required>
                     <option></option>
                     @foreach ($lowongan as $jabatan)
                         <option value="{{ $jabatan->id }}">{{ $jabatan->nama }}</option>
                     @endforeach
-                    </optgroup>
                 </select>
                 @error('jabatan')
                     <div class="alert alert-danger mt-2">

@@ -170,13 +170,13 @@
         </div>
     </div> --}}
 @extends('layouts.form')
-@section('title', 'Apply Lamaran')
+@section('title', 'Apply Job')
 @section('content')
     <div class="container">
         <div class="row justify-content-center mx-3">
             <div class="col-lg-6 bg-white p-5 main shadow-sm">
                 <div class="text-center mb-5">
-                    <h3>Apply Lamaran</h3>
+                    <h3>Apply Job</h3>
                 </div>
                 <form id="myForm" action="{{ route('recruitment.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -315,7 +315,7 @@
                     </div>
                     <!--end::Dropzone-->
                     <!--reChatpcha-->
-                    <div class="fv-row mb-4 mt-4">
+                    {{-- <div class="fv-row mb-4 mt-4">
                         <div>
                             <input name="g-recaptcha-response" type="hidden"
                                 class="@error('g-recaptcha-response') is-invalid @enderror" />
@@ -327,7 +327,7 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                    </div>
+                    </div> --}}
                     <!--end::reChaptcha-->
 
                     <!--begin::Submit button-->
