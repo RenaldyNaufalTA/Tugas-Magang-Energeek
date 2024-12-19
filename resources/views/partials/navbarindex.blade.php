@@ -35,7 +35,7 @@
                     </form>
                 </li>
             @else
-                <li class="nav-item">
+                <li class="nav-item me-4">
                     <select class="js-select" data-placeholder="Lowongan" style="width: 290px" name="state"
                         id="select">
                         <option></option>
@@ -53,10 +53,10 @@
 
                     </select>
                 </li>
-                <li class="nav-item ms-2 me-4">
+                {{-- <li class="nav-item ms-2 me-4">
                     <a class="btn btn-sm btn-outline-primary text-center" id="btn-login" href="{{ route('login') }}">Login
                     </a>
-                </li>
+                </li> --}}
             @endauth
         </ul>
     </div>
